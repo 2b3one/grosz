@@ -9,6 +9,38 @@ body {
     background: #0a0a0a;
 }
 
+.cloud {
+    position: absolute;
+    width: 64px;
+    height: 32px;
+    background: 
+        /* chmura z pixeli */
+        linear-gradient(#fff 0 0) 8px 8px/16px 8px no-repeat,
+        linear-gradient(#fff 0 0) 0px 16px/32px 8px no-repeat,
+        linear-gradient(#fff 0 0) 16px 0px/32px 8px no-repeat,
+        linear-gradient(#fff 0 0) 40px 16px/24px 8px no-repeat;
+    opacity: 0.6;
+    z-index: 2;
+    pointer-events: none;
+    image-rendering: pixelated;
+    animation: plynPixel 60s steps(60, end) infinite; /* klatkowy ruch */
+}
+.cloud-1 {
+    top: 8vh;
+    scale: 2;
+}
+.cloud-2 {
+    top: 15vh;
+    scale: 2.5;
+    animation-delay: -15s;
+    animation-duration: 80s;
+}
+
+@keyframes plynPixel {
+    0% { left: -20vw; }
+    100% { left: 110vw; }
+}
+
 /* SCENA - FIX ŚCIEŻKI */
 .scene {
     position: fixed;
@@ -121,58 +153,96 @@ body {
     100% { left: 110vw; transform: translateY(5px); }
 }
 
-/* PRANIE NA BALKONACH - MACHANIE */
+/* PRANIE PIXEL ART */
 .pranie {
     position: absolute;
-    font-size: 2.5vw;
     z-index: 3;
     pointer-events: none;
-    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.5));
-    animation: machajPranie 3s ease-in-out infinite;
+    image-rendering: pixelated; /* kluczowe dla pixel artu */
+    image-rendering: crisp-edges;
     transform-origin: top center;
+    animation: machajPixel 1s steps(4, end) infinite; /* klatkowa animacja */
 }
 
-/* Pozycje prania - dostosuj pod swoje bloki na zdjęciu */
+/* SPRITE KOSZULKI - 16x16px narysowane w CSS */
 .pranie-1 {
-    top: 25vh;
-    left: 15vw;
-    animation-delay: 0s;
+    width: 32px;
+    height: 32px;
+    background: 
+        /* rękawy */
+        linear-gradient(#4a90e2 0 0) 4px 4px/8px 8px no-repeat,
+        linear-gradient(#4a90e2 0 0) 20px 4px/8px 8px no-repeat,
+        /* korpus */
+        linear-gradient(#4a90e2 0 0) 8px 8px/16px 20px no-repeat,
+        /* cień */
+        linear-gradient(rgba(0,0,0,0.3) 0 0) 8px 26px/16px 2px no-repeat;
+    top: 32vh;
+    left: 18vw;
 }
+
+/* SPRITE SPODNI */
 .pranie-2 {
-    top: 28vh;
-    left: 65vw;
+    width: 32px;
+    height: 40px;
+    background:
+        /* nogawki */
+        linear-gradient(#2c3e50 0 0) 6px 8px/8px 28px no-repeat,
+        linear-gradient(#2c3e50 0 0) 18px 8px/8px 28px no-repeat,
+        /* pas */
+        linear-gradient(#1a252f 0 0) 6px 4px/20px 6px no-repeat;
+    top: 35vh;
+    left: 68vw;
+    animation-delay: -0.25s;
+}
+
+/* SPRITE SKARPETY */
+.pranie-3 {
+    width: 24px;
+    height: 24px;
+    background:
+        linear-gradient(#e74c3c 0 0) 4px 4px/16px 16px no-repeat,
+        linear-gradient(#c0392b 0 0) 4px 18px/16px 4px no-repeat;
+    top: 52vh;
+    left: 22vw;
     animation-delay: -0.5s;
 }
-.pranie-3 {
-    top: 45vh;
-    left: 20vw;
-    animation-delay: -1s;
-    font-size: 1.8vw;
-}
+
+/* SPRITE KOSZULI */
 .pranie-4 {
-    top: 42vh;
-    left: 72vw;
-    animation-delay: -1.5s;
+    width: 32px;
+    height: 32px;
+    background:
+        /* kołnierz */
+        linear-gradient(#ecf0f1 0 0) 12px 2px/8px 4px no-repeat,
+        /* korpus */
+        linear-gradient(#ecf0f1 0 0) 8px 6px/16px 22px no-repeat,
+        /* guziki */
+        linear-gradient(#34495e 0 0) 15px 10px/2px 2px no-repeat,
+        linear-gradient(#34495e 0 0) 15px 16px/2px 2px no-repeat,
+        linear-gradient(#34495e 0 0) 15px 22px/2px 2px no-repeat;
+    top: 48vh;
+    left: 75vw;
+    animation-delay: -0.75s;
 }
 
-@keyframes machajPranie {
-    0%, 100% { transform: rotate(-5deg) translateX(0px); }
-    25% { transform: rotate(3deg) translateX(2px); }
-    50% { transform: rotate(-3deg) translateX(-1px); }
-    75% { transform: rotate(5deg) translateX(1px); }
+/* MOCNA KLATKOWA ANIMACJA PIXEL ART */
+@keyframes machajPixel {
+    0%   { transform: rotate(-12deg) translateX(-2px); }
+    25%  { transform: rotate(8deg) translateX(3px); }
+    50%  { transform: rotate(-8deg) translateX(-2px); }
+    75%  { transform: rotate(12deg) translateX(2px); }
+    100% { transform: rotate(-12deg) translateX(-2px); }
 }
 
-/* MOBILE - mniejsze pranie i wolniejsze chmury */
+/* MOBILE - większe pixele żeby było widać */
 @media (max-width: 768px) {
-    .pranie { font-size: 5vw; }
-    .cloud-1 { animation-duration: 100s; }
-    .cloud-2 { animation-duration: 130s; }
-    
-    /* Przesuń pranie na mobile */
-    .pranie-1 { top: 30vh; left: 10vw; }
-    .pranie-2 { top: 33vh; left: 70vw; }
-    .pranie-3 { top: 48vh; left: 15vw; }
-    .pranie-4 { top: 45vh; left: 75vw; }
+    .pranie {
+        scale: 1.5; /* powiększamy pixele */
+    }
+    .pranie-1 { top: 38vh; left: 15vw; }
+    .pranie-2 { top: 41vh; left: 72vw; }
+    .pranie-3 { top: 55vh; left: 18vw; }
+    .pranie-4 { top: 52vh; left: 78vw; }
 }
 
 /* KAPIBARA HOTSPOT - FIX NAZWY KLASY */
