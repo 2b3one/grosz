@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osiedle Misja Kontakt - LGC</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+
+<!-- SCENA -->
+<div class="scene" id="scene"></div>
+
+<!-- CHMURY -->
+<img src="assets/cloud.png" class="cloud cloud-1" alt="">
+<img src="assets/cloud.png" class="cloud cloud-2" alt="">
+
+<!-- KLIKALNY OBSZAR KAPIBARY -->
+<div class="capybara-hotspot" id="capy" title="Kliknij kapibarę"></div>
+
+<!-- POPUP HISTORIE -->
+<div class="popup" id="popup">
+    <h2>Historie z Ostatniego Grosza</h2>
+    <p id="story"></p>
+    <button onclick="closePopup()">Zamknij</button>
+</div>
+
+<!-- MENU -->
+<div class="menu">
+    <div class="menu-item" id="btn-start">Start</div>
+    <div class="menu-item" id="btn-mapa">Mapa</div>
+    <div class="menu-item" id="btn-misje">Misje</div>
+    <div class="menu-item" id="btn-postacie">Postacie</div>
+    <div class="menu-item" id="btn-kontakt">Kontakt</div>
+</div>
+
+<!-- CZAT KAPIBARY LGC -->
+<div class="kapibara-chat" id="kapibaraChat">
+  <div class="kapibara-chat-header">
+    <strong>Kapibara LGC</strong>
+    <span id="closeChat" style="cursor:pointer;">✖</span>
+  </div>
+  <div class="kapibara-chat-window" id="kapibaraChatWindow">
+    <div class="msg bot">
+      Siema, jestem z LGC. Pilnuję Grosza. O co pytasz, mordo?
+    </div>
+  </div>
+  <div class="kapibara-chat-input">
+    <input id="kapibaraInput" type="text" placeholder="Pisz do LGC..." autocomplete="off" />
+    <button id="kapibaraSend">Wyślij</button>
+  </div>
+</div>
+
+<script src="agent.js"></script>
+</body>
+</html>
