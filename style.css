@@ -22,28 +22,38 @@ body {
     z-index: 1;
 }
 
-..capybara-hotspot {
+.capybara-hotspot {
     position: absolute;
-    width: 160px;   /* większy obszar kliknięcia */
+    width: 160px;
     height: 160px;
-    bottom: 35%;    /* było 42% - schodzimy niżej */
-    left: 28%;      /* było 38% - idziemy w lewo */
+    bottom: 20%;    /* Twoja wartość na desktop */
+    left: 30%;      /* Twoja wartość na desktop */
     cursor: pointer;
     z-index: 6;
     border-radius: 50%;
-    /* background: rgba(255,0,0,0.5); zostaw na testy, potem zakomentuj */
+    /* background: rgba(255,0,0,0.5); test */
 }
 .capybara-hotspot:hover {
     filter: drop-shadow(0 0 15px #00ff88);
 }
 
-/* MOBILE - kapibara jeszcze niżej na telefonie */
+/* MOBILE - hotspot wyżej żeby nie wpadł pod menu */
 @media (max-width: 600px) {
     .capybara-hotspot {
-        width: 120px;
-        height: 120px;
-        bottom: 38%;  /* dostrój na swoim telefonie */
-        left: 25%;    
+        width: 110px;
+        height: 110px;
+        bottom: 32%;  /* WYŻEJ niż na desktopie, bo menu zabiera 70px */
+        left: 25%;    /* trochę bardziej w lewo na telefonie */
+    }
+}
+
+/* BARDZO MAŁE TELEFONY */
+@media (max-width: 400px) {
+    .capybara-hotspot {
+        bottom: 35%;
+        left: 22%;
+        width: 90px;
+        height: 90px;
     }
 }
 
