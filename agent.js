@@ -17,7 +17,12 @@ const kapibaraLegends = [
 
 /* === KLIK KAPIBARY - FIX === */
 document.getElementById("capy").onclick = () => {
+    // 1. Otwórz czat
     document.getElementById("kapibaraChat").style.display = "flex";
+    
+    // 2. Wrzuć losową historię do czatu jako pierwszą wiadomość
+    const losowaHistoria = stories[Math.floor(Math.random() * stories.length)];
+    kapibaraAddMsg("Ej, zanim zapytasz... " + losowaHistoria, "bot");
 };
 
 document.getElementById("btn-misje").onclick = () => {
