@@ -88,98 +88,135 @@ body {
 }
 
 /* KOSZULKA 16x16px */
+/* BROWAR TYSKIE 16x24px */
 .pranie-1 {
-    width: 32px; height: 32px;
+    width: 32px; height: 48px;
     background: 
-        /* KONTUR */
-        linear-gradient(#000 0 0) 6px 5px/20px 1px no-repeat,
-        linear-gradient(#000 0 0) 5px 6px/1px 20px no-repeat,
-        linear-gradient(#000 0 0) 26px 6px/1px 20px no-repeat,
-        linear-gradient(#000 0 0) 6px 26px/20px 1px no-repeat,
-        /* RĘKAWY */
-        linear-gradient(#2d5f9a 0 0) 6px 7px/5px 5px no-repeat,
-        linear-gradient(#2d5f9a 0 0) 21px 7px/5px 5px no-repeat,
-        /* KORPUS */
-        linear-gradient(#4a90e2 0 0) 6px 7px/20px 18px no-repeat,
-        linear-gradient(#3a7bc8 0 0) 16px 7px/10px 18px no-repeat,
-        /* DETAL */
-        linear-gradient(#2d5f9a 0 0) 15px 12px/1px 10px no-repeat;
+        /* KONTUR BUTELKI */
+        linear-gradient(#000 0 0) 10px 2px/12px 1px no-repeat,
+        linear-gradient(#000 0 0) 9px 3px/1px 36px no-repeat,
+        linear-gradient(#000 0 0) 22px 3px/1px 36px no-repeat,
+        linear-gradient(#000 0 0) 10px 39px/12px 1px no-repeat,
+        /* SZYJKA */
+        linear-gradient(#8b4513 0 0) 13px 3px/6px 6px no-repeat,
+        linear-gradient(#654321 0 0) 16px 3px/3px 6px no-repeat,
+        /* KAPSEL */
+        linear-gradient(#c0c0c0 0 0) 12px 2px/8px 2px no-repeat,
+        linear-gradient(#808080 0 0) 12px 4px/8px 1px no-repeat,
+        /* PIWO */
+        linear-gradient(#daa520 0 0) 10px 9px/12px 28px no-repeat,
+        linear-gradient(#b8860b 0 0) 16px 9px/6px 28px no-repeat,
+        /* PIANA */
+        linear-gradient(#fff 0 0) 10px 9px/12px 4px no-repeat,
+        linear-gradient(#f5f5f5 0 0) 10px 13px/12px 1px no-repeat,
+        /* ETYKIETA */
+        linear-gradient(#ff0000 0 0) 10px 20px/12px 8px no-repeat,
+        linear-gradient(#000 0 0) 10px 20px/12px 1px no-repeat,
+        linear-gradient(#000 0 0) 10px 27px/12px 1px no-repeat;
     top: 25vh; 
     right: 10vw;
-    scale: 0.5; /* MALUTKIE */
+    scale: 0.5;
 }
 
-/* SPODNIE 16x24px */
+/* SPRAY LGC 16x24px */
 .pranie-2 {
     width: 32px; height: 48px;
     background:
-        /* KONTUR */
-        linear-gradient(#000 0 0) 7px 4px/18px 1px no-repeat,
-        linear-gradient(#000 0 0) 6px 5px/1px 38px no-repeat,
-        linear-gradient(#000 0 0) 25px 5px/1px 38px no-repeat,
-        linear-gradient(#000 0 0) 7px 43px/5px 1px no-repeat,
-        linear-gradient(#000 0 0) 20px 43px/5px 1px no-repeat,
-        /* PAS */
-        linear-gradient(#0a0a0a 0 0) 7px 5px/18px 3px no-repeat,
-        /* NOGAWKI */
-        linear-gradient(#2c3e50 0 0) 7px 8px/8px 34px no-repeat,
-        linear-gradient(#1f2d3a 0 0) 11px 8px/4px 34px no-repeat,
-        linear-gradient(#2c3e50 0 0) 17px 8px/8px 34px no-repeat,
-        linear-gradient(#1f2d3a 0 0) 21px 8px/4px 34px no-repeat;
+        /* KONTUR PUSZKI */
+        linear-gradient(#000 0 0) 8px 8px/16px 1px no-repeat,
+        linear-gradient(#000 0 0) 7px 9px/1px 28px no-repeat,
+        linear-gradient(#000 0 0) 24px 9px/1px 28px no-repeat,
+        linear-gradient(#000 0 0) 8px 37px/16px 1px no-repeat,
+        /* GÓRA PUSZKI */
+        linear-gradient(#c0c0c0 0 0) 12px 4px/8px 4px no-repeat,
+        linear-gradient(#808080 0 0) 12px 8px/8px 1px no-repeat,
+        /* DYSZA */
+        linear-gradient(#000 0 0) 14px 2px/4px 3px no-repeat,
+        linear-gradient(#ff0000 0 0) 15px 1px/2px 2px no-repeat,
+        /* KORPUS NIEBIESKI */
+        linear-gradient(#1e90ff 0 0) 8px 9px/16px 27px no-repeat,
+        linear-gradient(#1873cc 0 0) 16px 9px/8px 27px no-repeat,
+        /* NAPIS LGC */
+        linear-gradient(#fff 0 0) 10px 16px/1px 4px no-repeat,
+        linear-gradient(#fff 0 0) 10px 16px/4px 1px no-repeat,
+        linear-gradient(#fff 0 0) 10px 18px/4px 1px no-repeat,
+        linear-gradient(#fff 0 0) 13px 18px/1px 2px no-repeat,
+        linear-gradient(#fff 0 0) 16px 16px/4px 1px no-repeat,
+        linear-gradient(#fff 0 0) 16px 18px/1px 2px no-repeat,
+        linear-gradient(#fff 0 0) 19px 16px/1px 4px no-repeat,
+        /* CIENIOWANIE */
+        linear-gradient(rgba(0,0,0,0.3) 0 0) 8px 12px/16px 1px no-repeat,
+        linear-gradient(rgba(0,0,0,0.3) 0 0) 8px 24px/16px 1px no-repeat;
     top: 38vh; 
     right: 11vw;
     scale: 0.5;
     animation-delay: -0.3s;
 }
 
-/* SKARPETA 12x12px */
+/* MIKROFON 16x24px */
 .pranie-3 {
-    width: 24px; height: 24px;
+    width: 32px; height: 48px;
     background:
-        /* KONTUR */
-        linear-gradient(#000 0 0) 5px 5px/14px 1px no-repeat,
-        linear-gradient(#000 0 0) 4px 6px/1px 14px no-repeat,
-        linear-gradient(#000 0 0) 19px 6px/1px 14px no-repeat,
-        linear-gradient(#000 0 0) 5px 20px/14px 1px no-repeat,
-        /* PASEK */
-        linear-gradient(#ecf0f1 0 0) 5px 6px/14px 2px no-repeat,
-        /* KORPUS */
-        linear-gradient(#e74c3c 0 0) 5px 8px/14px 11px no-repeat,
-        linear-gradient(#c0392b 0 0) 12px 8px/7px 11px no-repeat,
-        /* PASKI */
-        linear-gradient(rgba(0,0,0,0.3) 0 0) 5px 11px/14px 1px no-repeat,
-        linear-gradient(rgba(0,0,0,0.3) 0 0) 5px 15px/14px 1px no-repeat;
+        /* KONTUR GŁÓWKI */
+        linear-gradient(#000 0 0) 8px 4px/16px 1px no-repeat,
+        linear-gradient(#000 0 0) 7px 5px/1px 14px no-repeat,
+        linear-gradient(#000 0 0) 24px 5px/1px 14px no-repeat,
+        linear-gradient(#000 0 0) 8px 19px/16px 1px no-repeat,
+        /* SIATKA MIKROFONU */
+        linear-gradient(#4a4a4a 0 0) 8px 5px/16px 13px no-repeat,
+        linear-gradient(#2a2a2a 0 0) 8px 5px/1px 13px no-repeat,
+        linear-gradient(#2a2a2a 0 0) 11px 5px/1px 13px no-repeat,
+        linear-gradient(#2a2a2a 0 0) 14px 5px/1px 13px no-repeat,
+        linear-gradient(#2a2a2a 0 0) 17px 5px/1px 13px no-repeat,
+        linear-gradient(#2a2a2a 0 0) 20px 5px/1px 13px no-repeat,
+        linear-gradient(#2a2a2a 0 0) 23px 5px/1px 13px no-repeat,
+        linear-gradient(#2a2a2a 0 0) 8px 8px/16px 1px no-repeat,
+        linear-gradient(#2a2a2a 0 0) 8px 11px/16px 1px no-repeat,
+        linear-gradient(#2a2a2a 0 0) 8px 14px/16px 1px no-repeat,
+        linear-gradient(#2a2a2a 0 0) 8px 17px/16px 1px no-repeat,
+        /* RĄCZKA */
+        linear-gradient(#000 0 0) 14px 19px/1px 18px no-repeat,
+        linear-gradient(#000 0 0) 17px 19px/1px 18px no-repeat,
+        linear-gradient(#000 0 0) 14px 37px/4px 1px no-repeat,
+        linear-gradient(#1a1a1a 0 0) 15px 19px/2px 18px no-repeat,
+        /* DETAL RĄCZKI */
+        linear-gradient(#333 0 0) 15px 24px/2px 2px no-repeat,
+        linear-gradient(#333 0 0) 15px 30px/2px 2px no-repeat;
     top: 52vh; 
     right: 10vw;
     scale: 0.5;
     animation-delay: -0.6s;
 }
 
-/* KOSZULA 16x16px */
+/* PŁYTA WINYLOWA 20x20px */
 .pranie-4 {
-    width: 32px; height: 32px;
+    width: 40px; height: 40px;
     background:
-        /* KONTUR */
-        linear-gradient(#000 0 0) 6px 4px/20px 1px no-repeat,
-        linear-gradient(#000 0 0) 5px 5px/1px 22px no-repeat,
-        linear-gradient(#000 0 0) 26px 5px/1px 22px no-repeat,
-        linear-gradient(#000 0 0) 6px 27px/20px 1px no-repeat,
-        /* KOŁNIERZ */
-        linear-gradient(#d5d8dc 0 0) 11px 5px/4px 3px no-repeat,
-        linear-gradient(#d5d8dc 0 0) 17px 5px/4px 3px no-repeat,
-        /* KORPUS */
-        linear-gradient(#f8f9f9 0 0) 6px 8px/20px 18px no-repeat,
-        linear-gradient(#d5d8dc 0 0) 16px 8px/10px 18px no-repeat,
-        /* GUZIKI 1px */
-        linear-gradient(#2c3e50 0 0) 15px 12px/1px 1px no-repeat,
-        linear-gradient(#2c3e50 0 0) 15px 17px/1px 1px no-repeat,
-        linear-gradient(#2c3e50 0 0) 15px 22px/1px 1px no-repeat,
-        /* KIESZEŃ */
-        linear-gradient(rgba(0,0,0,0.3) 0 0) 9px 14px/5px 5px no-repeat;
+        /* KONTUR ZEWNĘTRZNY */
+        linear-gradient(#000 0 0) 2px 18px/36px 4px no-repeat,
+        linear-gradient(#000 0 0) 18px 2px/4px 36px no-repeat,
+        linear-gradient(#000 0 0) 6px 10px/28px 2px no-repeat,
+        linear-gradient(#000 0 0) 10px 6px/2px 28px no-repeat,
+        linear-gradient(#000 0 0) 28px 6px/2px 28px no-repeat,
+        linear-gradient(#000 0 0) 6px 28px/28px 2px no-repeat,
+        /* PŁYTA CZARNA */
+        radial-gradient(circle at center, #1a1a1a 0%, #000 70%),
+        linear-gradient(#0a0a0a 0 0) 2px 2px/36px 36px no-repeat,
+        /* ROWKI WINYLU */
+        radial-gradient(circle at center, transparent 30%, #2a2a2a 31%, transparent 32%, #2a2a2a 33%, transparent 34%, #2a2a2a 35%, transparent 36%),
+        /* ETYKIETA ŚRODEK */
+        radial-gradient(circle at center, #ff0000 0%, #cc0000 60%, #000 61%),
+        linear-gradient(#ff0000 0 0) 14px 14px/12px 12px no-repeat,
+        /* OTWÓR */
+        radial-gradient(circle at center, #000 0%, #000 100%),
+        linear-gradient(#000 0 0) 19px 19px/2px 2px no-repeat,
+        /* REFLEKS */
+        linear-gradient(rgba(255,255,255,0.2) 0 0) 8px 8px/6px 6px no-repeat;
     top: 65vh; 
     right: 11vw;
     scale: 0.5;
     animation-delay: -0.9s;
+    border-radius: 50%;
 }
 
 @keyframes machajPixel {
