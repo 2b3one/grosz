@@ -1,3 +1,17 @@
+// PODŚWIETLENIE PRANIA PO KLIKNIĘCIU
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('pranie')) {
+        // Usuń podświetlenie z innych
+        document.querySelectorAll('.pranie').forEach(p => p.classList.remove('clicked'));
+        // Dodaj do klikniętego
+        e.target.classList.add('clicked');
+        
+        // Usuń po 3 sekundach
+        setTimeout(() => {
+            e.target.classList.remove('clicked');
+        }, 3000);
+    }
+});
 document.addEventListener('DOMContentLoaded', () => {
     
     console.log("LGC Agent loaded");
