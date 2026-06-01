@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    console.log("LGC Agent loaded");
+    
     /* === HISTORIE LGC === */
     const stories = [
         "LGC powstało jak kable zwisały nad blokami w 98. Kapibara wybrała mnie.",
@@ -25,22 +27,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const kapibaraSend = document.getElementById("kapibaraSend");
     const closeChat = document.getElementById("closeChat");
 
-    /* === HOTSPOTY OTWIERAJĄ CZAT === */
+    /* === HOTSPOTY OTWIERAJĄ CZAT - FIXED === */
     function openChat() {
+        console.log("Otwieram czat LGC");
         kapibaraChat.style.display = "flex";
+        kapibaraInput.focus();
     }
 
-    document.getElementById("capy").onclick = openChat;
-    document.getElementById("lgc-face").onclick = openChat;
-    document.getElementById("capy").addEventListener("touchstart", openChat);
-    document.getElementById("lgc-face").addEventListener("touchstart", openChat);
+    // Klik na kapibarę
+    const capyEl = document.getElementById("capy");
+    if (capyEl) {
+        capyEl.onclick = openChat;
+        capyEl.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            openChat();
+        });
+    }
+
+    // Klik na LGC
+    const lgcEl = document.getElementById("lgc-face");
+    if (lgcEl) {
+        lgcEl.onclick = openChat;
+        lgcEl.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            openChat();
+        });
+    }
 
     /* === POPUP MISJE === */
-    document.getElementById("btn-misje").onclick = () => {
-        document.getElementById("popup").style.display = "block";
-        document.getElementById("story").innerText =
-            stories[Math.floor(Math.random() * stories.length)];
-    };
+    const btnMisje = document.getElementById("btn-misje");
+    if (btnMisje) {
+        btnMisje.onclick = () => {
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("story").innerText =
+                stories[Math.floor(Math.random() * stories.length)];
+        };
+    }
 
     window.closePopup = () => {
         document.getElementById("popup").style.display = "none";
@@ -71,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         kapibaraChatWindow.appendChild(div);
         kapibaraChatWindow.scrollTop = kapibaraChatWindow.scrollHeight;
         
-        if (sender === "bot") {
+        if (sender === "bot" && mouth) {
             mouth.classList.add("talking");
             const czasGadania = Math.min(text.length * 80, 3000);
             setTimeout(() => mouth.classList.remove("talking"), czasGadania);
@@ -129,42 +151,56 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* === WYSYŁANIE === */
-    kapibaraSend.onclick = async () => {
-        const text = kapibaraInput.value.trim();
-        if (!text) return;
+    if (kapibaraSend) {
+        kapibaraSend.onclick = async () => {
+            const text = kapibaraInput.value.trim();
+            if (!text) return;
 
-        kapibaraAddMsg(text, "user");
-        kapibaraInput.value = "";
+            kapibaraAddMsg(text, "user");
+            kapibaraInput.value = "";
 
-        const reply = await kapibaraAI(text);
-        setTimeout(() => kapibaraAddMsg(reply, "bot"), 300);
-    };
+            const reply = await kapibaraAI(text);
+            setTimeout(() => kapibaraAddMsg(reply, "bot"), 300);
+        };
+    }
 
-    kapibaraInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-            e.preventDefault();
-            kapibaraSend.click();
-        }
-    });
+    if (kapibaraInput) {
+        kapibaraInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                kapibaraSend.click();
+            }
+        });
+    }
 
-    closeChat.onclick = () => kapibaraChat.style.display = "none";
+    if (closeChat) {
+        closeChat.onclick = () => kapibaraChat.style.display = "none";
+    }
 
-    // MENU PLACEHOLDER
-    document.getElementById("btn-start").onclick = () => {
+    // MENU
+    const btnStart = document.getElementById("btn-start");
+    if (btnStart) btnStart.onclick = () => {
         openChat();
         kapibaraAddMsg("Start - Wkrótce nowe misje na Groszu.", "bot");
     };
-    document.getElementById("btn-mapa").onclick = () => {
+
+    const btnMapa = document.getElementById("btn-mapa");
+    if (btnMapa) btnMapa.onclick = () => {
         openChat();
         kapibaraAddMsg("Mapa - Tylko wtajemniczeni znają wszystkie skróty.", "bot");
     };
-    document.getElementById("btn-postacie").onclick = () => {
+
+    const btnPostacie = document.getElementById("btn-postacie");
+    if (btnPostacie) btnPostacie.onclick = () => {
         openChat();
         kapibaraAddMsg("Postacie - Heniek, LGC, Kapibara. Reszta to tło.", "bot");
     };
-    document.getElementById("btn-kontakt").onclick = () => {
+
+    const btnKontakt = document.getElementById("btn-kontakt");
+    if (btnKontakt) btnKontakt.onclick = () => {
         openChat();
         kapibaraAddMsg("Kontakt - LGC nie odbiera nieznanych numerów.", "bot");
     };
 
+    console.log("LGC Ready");
 });

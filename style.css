@@ -9,7 +9,6 @@ body {
     background: #0a0a0a;
 }
 
-/* SCENA */
 .scene {
     position: fixed;
     top: -5vh; left: -5vw;
@@ -47,51 +46,64 @@ body {
     100% { left: 110vw; }
 }
 
-/* PRANIE PIXEL ART */
+/* PRANIE PIXEL ART - PIONOWO PO PRAWEJ */
 .pranie {
     position: absolute;
     z-index: 3;
-    pointer-events: none;
+    cursor: pointer;
     image-rendering: pixelated;
     transform-origin: top center;
     animation: machajPixel 1s steps(4, end) infinite;
+    display: block;
 }
 
-.pranie-1 { /* koszulka */
+.pranie:hover {
+    filter: drop-shadow(0 0 8px #00ff88) brightness(1.2);
+    scale: 1.1;
+}
+
+/* BALKONY PO PRAWEJ - PIONOWO */
+.pranie-1 { /* balkon 1 - najwyższy */
     width: 32px; height: 32px;
     background: 
         linear-gradient(#4a90e2 0 0) 4px 4px/8px 8px no-repeat,
         linear-gradient(#4a90e2 0 0) 20px 4px/8px 8px no-repeat,
         linear-gradient(#4a90e2 0 0) 8px 8px/16px 20px no-repeat;
-    top: 32vh; left: 18vw;
+    top: 25vh; 
+    right: 15vw; /* PRAWA STRONA */
 }
 
-.pranie-2 { /* spodnie */
+.pranie-2 { /* balkon 2 */
     width: 32px; height: 40px;
     background:
         linear-gradient(#2c3e50 0 0) 6px 8px/8px 28px no-repeat,
         linear-gradient(#2c3e50 0 0) 18px 8px/8px 28px no-repeat,
         linear-gradient(#1a252f 0 0) 6px 4px/20px 6px no-repeat;
-    top: 35vh; left: 68vw; animation-delay: -0.25s;
+    top: 38vh; 
+    right: 18vw;
+    animation-delay: -0.25s;
 }
 
-.pranie-3 { /* skarpeta */
+.pranie-3 { /* balkon 3 */
     width: 24px; height: 24px;
     background:
         linear-gradient(#e74c3c 0 0) 4px 4px/16px 16px no-repeat,
         linear-gradient(#c0392b 0 0) 4px 18px/16px 4px no-repeat;
-    top: 52vh; left: 22vw; animation-delay: -0.5s;
+    top: 52vh; 
+    right: 16vw;
+    animation-delay: -0.5s;
 }
 
-.pranie-4 { /* koszula */
+.pranie-4 { /* balkon 4 - najniższy */
     width: 32px; height: 32px;
     background:
         linear-gradient(#ecf0f1 0 0) 12px 2px/8px 4px no-repeat,
         linear-gradient(#ecf0f1 0 0) 8px 6px/16px 22px no-repeat,
         linear-gradient(#34495e 0 0) 15px 10px/2px 2px no-repeat,
-        linear-gradient(#34495e 0 0) 15px 16px/2px 2px no-repeat,
-        linear-gradient(#34495e 0 0) 15px 22px/2px 2px no-repeat;
-    top: 48vh; left: 75vw; animation-delay: -0.75s;
+        linear-gradient(#34495e 0 0) 15px 16px/2px 2px no-repeat;
+    top: 65vh; 
+    right: 17vw;
+    animation-delay: -0.75s;
 }
 
 @keyframes machajPixel {
@@ -137,6 +149,7 @@ body {
     transform: translateX(-50%);
     image-rendering: pixelated;
     opacity: 0;
+    pointer-events: none;
 }
 .mouth.talking {
     opacity: 1;
@@ -226,19 +239,19 @@ body {
 
 /* MOBILE */
 @media (max-width: 768px) {
-   .pranie { scale: 1.5; }
-   .pranie-1 { top: 38vh; left: 15vw; }
-   .pranie-2 { top: 41vh; left: 72vw; }
-   .pranie-3 { top: 55vh; left: 18vw; }
-   .pranie-4 { top: 52vh; left: 78vw; }
+  .pranie { scale: 1.8; }
+  .pranie-1 { top: 28vh; right: 10vw; }
+  .pranie-2 { top: 40vh; right: 12vw; }
+  .pranie-3 { top: 53vh; right: 11vw; }
+  .pranie-4 { top: 66vh; right: 12vw; }
     
-   .capy-hotspot { width: 18vw; height: 18vw; left: 18vw; top: 22vh; }
-   .lgc-hotspot { width: 25vw; height: 25vw; top: 48vh; }
-   .mouth { top: 55vh; scale: 1.5; }
+  .capy-hotspot { width: 18vw; height: 18vw; left: 18vw; top: 22vh; }
+  .lgc-hotspot { width: 25vw; height: 25vw; top: 48vh; }
+  .mouth { top: 55vh; scale: 1.5; }
     
-   .menu { height: 60px; }
-   .menu-item { font-size: 8px; padding: 8px 5px; }
-   .kapibara-chat { width: 95vw; right: 2.5vw; height: 60vh; bottom: 70px; }
-   .popup { width: 95%; }
-   .popup h2 { font-size: 12px; }
+  .menu { height: 60px; }
+  .menu-item { font-size: 8px; padding: 8px 5px; }
+  .kapibara-chat { width: 95vw; right: 2.5vw; height: 60vh; bottom: 70px; }
+  .popup { width: 95%; }
+  .popup h2 { font-size: 12px; }
 }
