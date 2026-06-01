@@ -81,115 +81,174 @@ body {
     scale: 1.15;
 }
 
-/* KOSZULKA HD - 32x32px */
-.pranie-1 {
-    width: 64px; height: 64px;
-    background: 
-        /* KONTUR CZARNY */
-        linear-gradient(#000 0 0) 12px 8px/40px 2px no-repeat,
-        linear-gradient(#000 0 0) 10px 10px/2px 40px no-repeat,
-        linear-gradient(#000 0 0) 52px 10px/2px 40px no-repeat,
-        linear-gradient(#000 0 0) 12px 50px/40px 2px no-repeat,
-        linear-gradient(#000 0 0) 8px 10px/4px 2px no-repeat,
-        linear-gradient(#000 0 0) 54px 10px/4px 2px no-repeat,
-        /* RĘKAWY */
-        linear-gradient(#3a7bc8 0 0) 14px 12px/12px 12px no-repeat,
-        linear-gradient(#2d5f9a 0 0) 14px 20px/12px 4px no-repeat,
-        linear-gradient(#3a7bc8 0 0) 38px 12px/12px 12px no-repeat,
-        linear-gradient(#2d5f9a 0 0) 38px 20px/12px 4px no-repeat,
-        /* KORPUS + CIENIOWANIE */
-        linear-gradient(#4a90e2 0 0) 14px 12px/36px 36px no-repeat,
-        linear-gradient(#3a7bc8 0 0) 26px 12px/24px 36px no-repeat,
-        linear-gradient(#2d5f9a 0 0) 38px 12px/12px 36px no-repeat,
-        /* FAŁDY */
-        linear-gradient(rgba(0,0,0,0.2) 0 0) 20px 16px/4px 28px no-repeat,
-        linear-gradient(rgba(0,0,0,0.2) 0 0) 40px 16px/4px 28px no-repeat;
-    top: 25vh; 
-    right: 15vw;
-    scale: 0.8;
+/* PRANIE PIXEL ART MINI HD 24x24px */
+.pranie {
+    position: absolute;
+    z-index: 3;
+    cursor: pointer;
+    image-rendering: pixelated;
+    transform-origin: top center;
+    animation: machajPixel 1.5s steps(6, end) infinite;
+    display: block;
+    filter: drop-shadow(1px 2px 0px rgba(0,0,0,0.6));
 }
 
-/* SPODNIE HD - 32x48px */
+.pranie:hover {
+    filter: drop-shadow(0 0 6px #00ff88) brightness(1.4);
+    scale: 1.2;
+}
+
+/* KOSZULKA MINI 24x24px - 6 WARSTW DETALU */
+.pranie-1 {
+    width: 48px; height: 48px;
+    background: 
+        /* KONTUR 1px */
+        linear-gradient(#000 0 0) 8px 6px/32px 1px no-repeat,
+        linear-gradient(#000 0 0) 7px 7px/1px 34px no-repeat,
+        linear-gradient(#000 0 0) 40px 7px/1px 34px no-repeat,
+        linear-gradient(#000 0 0) 8px 41px/32px 1px no-repeat,
+        /* RĘKAWY Z CIENIEM */
+        linear-gradient(#2d5f9a 0 0) 9px 9px/8px 8px no-repeat,
+        linear-gradient(#1f4a7a 0 0) 13px 9px/4px 8px no-repeat,
+        linear-gradient(#2d5f9a 0 0) 31px 9px/8px 8px no-repeat,
+        linear-gradient(#1f4a7a 0 0) 35px 9px/4px 8px no-repeat,
+        /* KORPUS GRADIENT */
+        linear-gradient(#4a90e2 0 0) 9px 9px/30px 30px no-repeat,
+        linear-gradient(#3a7bc8 0 0) 18px 9px/21px 30px no-repeat,
+        linear-gradient(#2d5f9a 0 0) 27px 9px/12px 30px no-repeat,
+        /* DITHERING - SZUM PIXELI */
+        linear-gradient(#3a7bc8 0 0) 15px 15px/1px 1px no-repeat,
+        linear-gradient(#3a7bc8 0 0) 17px 18px/1px 1px no-repeat,
+        linear-gradient(#3a7bc8 0 0) 19px 21px/1px 1px no-repeat,
+        linear-gradient(#2d5f9a 0 0) 30px 16px/1px 1px no-repeat,
+        linear-gradient(#2d5f9a 0 0) 32px 20px/1px 1px no-repeat,
+        /* SZEW */
+        linear-gradient(rgba(0,0,0,0.3) 0 0) 23px 12px/1px 26px no-repeat;
+    top: 25vh; 
+    right: 12vw;
+    scale: 0.6;
+}
+
+/* SPODNIE MINI 24x32px */
 .pranie-2 {
-    width: 64px; height: 80px;
+    width: 48px; height: 64px;
     background:
         /* KONTUR */
-        linear-gradient(#000 0 0) 16px 8px/32px 2px no-repeat,
-        linear-gradient(#000 0 0) 14px 10px/2px 60px no-repeat,
-        linear-gradient(#000 0 0) 48px 10px/2px 60px no-repeat,
-        linear-gradient(#000 0 0) 16px 70px/8px 2px no-repeat,
-        linear-gradient(#000 0 0) 40px 70px/8px 2px no-repeat,
-        /* PAS */
-        linear-gradient(#1a1a1a 0 0) 16px 10px/32px 6px no-repeat,
-        linear-gradient(#000 0 0) 16px 16px/32px 2px no-repeat,
-        /* NOGAWKA LEWA */
-        linear-gradient(#2c3e50 0 0) 16px 18px/14px 50px no-repeat,
-        linear-gradient(#1f2d3a 0 0) 22px 18px/8px 50px no-repeat,
-        /* NOGAWKA PRAWA */
-        linear-gradient(#2c3e50 0 0) 34px 18px/14px 50px no-repeat,
-        linear-gradient(#1f2d3a 0 0) 40px 18px/8px 50px no-repeat,
-        /* KIESZENIE */
-        linear-gradient(rgba(0,0,0,0.3) 0 0) 18px 22px/10px 2px no-repeat,
-        linear-gradient(rgba(0,0,0,0.3) 0 0) 36px 22px/10px 2px no-repeat;
+        linear-gradient(#000 0 0) 10px 6px/28px 1px no-repeat,
+        linear-gradient(#000 0 0) 9px 7px/1px 50px no-repeat,
+        linear-gradient(#000 0 0) 38px 7px/1px 50px no-repeat,
+        linear-gradient(#000 0 0) 10px 57px/6px 1px no-repeat,
+        linear-gradient(#000 0 0) 32px 57px/6px 1px no-repeat,
+        /* PAS + SZLWKI */
+        linear-gradient(#0a0a0a 0 0) 10px 7px/28px 4px no-repeat,
+        linear-gradient(#000 0 0) 14px 7px/2px 4px no-repeat,
+        linear-gradient(#000 0 0) 22px 7px/2px 4px no-repeat,
+        linear-gradient(#000 0 0) 32px 7px/2px 4px no-repeat,
+        /* NOGAWKA L */
+        linear-gradient(#2c3e50 0 0) 10px 12px/12px 44px no-repeat,
+        linear-gradient(#1f2d3a 0 0) 16px 12px/6px 44px no-repeat,
+        linear-gradient(#162029 0 0) 19px 12px/3px 44px no-repeat,
+        /* NOGAWKA P */
+        linear-gradient(#2c3e50 0 0) 26px 12px/12px 44px no-repeat,
+        linear-gradient(#1f2d3a 0 0) 32px 12px/6px 44px no-repeat,
+        linear-gradient(#162029 0 0) 35px 12px/3px 44px no-repeat,
+        /* KIESZENIE Z PRZESZYCIEM */
+        linear-gradient(#000 0 0) 12px 18px/8px 1px no-repeat,
+        linear-gradient(rgba(0,0,0,0.4) 0 0) 12px 19px/8px 6px no-repeat,
+        linear-gradient(#000 0 0) 28px 18px/8px 1px no-repeat,
+        linear-gradient(rgba(0,0,0,0.4) 0 0) 28px 19px/8px 6px no-repeat,
+        /* DITHERING */
+        linear-gradient(#1f2d3a 0 0) 13px 30px/1px 1px no-repeat,
+        linear-gradient(#1f2d3a 0 0) 29px 35px/1px 1px no-repeat;
     top: 38vh; 
-    right: 18vw;
-    scale: 0.8;
-    animation-delay: -0.3s;
+    right: 14vw;
+    scale: 0.6;
+    animation-delay: -0.25s;
 }
 
-/* SKARPETA HD - 24x24px */
+/* SKARPETA MINI 16x16px */
 .pranie-3 {
+    width: 32px; height: 32px;
+    background:
+        /* KONTUR */
+        linear-gradient(#000 0 0) 6px 6px/20px 1px no-repeat,
+        linear-gradient(#000 0 0) 5px 7px/1px 20px no-repeat,
+        linear-gradient(#000 0 0) 26px 7px/1px 20px no-repeat,
+        linear-gradient(#000 0 0) 6px 27px/20px 1px no-repeat,
+        linear-gradient(#000 0 0) 4px 18px/2px 2px no-repeat,
+        /* PASEK GÓRNY */
+        linear-gradient(#ecf0f1 0 0) 6px 7px/20px 3px no-repeat,
+        linear-gradient(#bdc3c7 0 0) 6px 10px/20px 1px no-repeat,
+        /* KORPUS GRADIENT */
+        linear-gradient(#e74c3c 0 0) 6px 11px/20px 15px no-repeat,
+        linear-gradient(#c0392b 0 0) 16px 11px/10px 15px no-repeat,
+        linear-gradient(#a93226 0 0) 21px 11px/5px 15px no-repeat,
+        /* WZÓR W PASKI */
+        linear-gradient(rgba(0,0,0,0.2) 0 0) 6px 14px/20px 1px no-repeat,
+        linear-gradient(rgba(0,0,0,0.2) 0 0) 6px 18px/20px 1px no-repeat,
+        linear-gradient(rgba(0,0,0,0.2) 0 0) 6px 22px/20px 1px no-repeat,
+        /* PIĘTA */
+        linear-gradient(#922b21 0 0) 6px 26px/20px 1px no-repeat;
+    top: 52vh; 
+    right: 13vw;
+    scale: 0.6;
+    animation-delay: -0.5s;
+}
+
+/* KOSZULA MINI 24x24px */
+.pranie-4 {
     width: 48px; height: 48px;
     background:
         /* KONTUR */
-        linear-gradient(#000 0 0) 12px 8px/24px 2px no-repeat,
-        linear-gradient(#000 0 0) 10px 10px/2px 28px no-repeat,
-        linear-gradient(#000 0 0) 36px 10px/2px 28px no-repeat,
-        linear-gradient(#000 0 0) 12px 38px/24px 2px no-repeat,
-        linear-gradient(#000 0 0) 8px 26px/4px 2px no-repeat,
+        linear-gradient(#000 0 0) 8px 4px/32px 1px no-repeat,
+        linear-gradient(#000 0 0) 7px 5px/1px 38px no-repeat,
+        linear-gradient(#000 0 0) 40px 5px/1px 38px no-repeat,
+        linear-gradient(#000 0 0) 8px 43px/32px 1px no-repeat,
+        /* KOŁNIERZ 2-CZĘŚCIOWY */
+        linear-gradient(#d5d8dc 0 0) 16px 5px/6px 4px no-repeat,
+        linear-gradient(#c0c4c8 0 0) 16px 9px/6px 1px no-repeat,
+        linear-gradient(#d5d8dc 0 0) 26px 5px/6px 4px no-repeat,
+        linear-gradient(#c0c4c8 0 0) 26px 9px/6px 1px no-repeat,
         /* KORPUS */
-        linear-gradient(#e74c3c 0 0) 12px 10px/24px 26px no-repeat,
-        /* CIENIOWANIE */
-        linear-gradient(#c0392b 0 0) 24px 10px/12px 26px no-repeat,
-        linear-gradient(#a93226 0 0) 30px 10px/6px 26px no-repeat,
-        /* PASEK NA GÓRZE */
-        linear-gradient(#ecf0f1 0 0) 12px 10px/24px 4px no-repeat,
-        linear-gradient(#bdc3c7 0 0) 12px 14px/24px 2px no-repeat;
-    top: 52vh; 
-    right: 16vw;
-    scale: 0.8;
-    animation-delay: -0.6s;
+        linear-gradient(#f8f9f9 0 0) 8px 10px/32px 32px no-repeat,
+        linear-gradient(#ecf0f1 0 0) 20px 10px/20px 32px no-repeat,
+        linear-gradient(#d5d8dc 0 0) 30px 10px/10px 32px no-repeat,
+        /* GUZIKI 1px */
+        linear-gradient(#2c3e50 0 0) 23px 16px/2px 2px no-repeat,
+        linear-gradient(#2c3e50 0 0) 23px 24px/2px 2px no-repeat,
+        linear-gradient(#2c3e50 0 0) 23px 32px/2px 2px no-repeat,
+        /* KIESZEŃ Z KLAPKĄ */
+        linear-gradient(rgba(0,0,0,0.2) 0 0) 12px 18px/8px 8px no-repeat,
+        linear-gradient(#000 0 0) 12px 18px/8px 1px no-repeat,
+        linear-gradient(#000 0 0) 12px 18px/1px 8px no-repeat,
+        linear-gradient(#000 0 0) 19px 18px/1px 8px no-repeat,
+        /* DITHERING KOSZULI */
+        linear-gradient(#ecf0f1 0 0) 14px 22px/1px 1px no-repeat,
+        linear-gradient(#ecf0f1 0 0) 33px 28px/1px 1px no-repeat;
+    top: 65vh; 
+    right: 13vw;
+    scale: 0.6;
+    animation-delay: -0.75s;
 }
 
-/* KOSZULA HD - 32x32px */
-.pranie-4 {
-    width: 64px; height: 64px;
-    background:
-        /* KONTUR */
-        linear-gradient(#000 0 0) 14px 6px/36px 2px no-repeat,
-        linear-gradient(#000 0 0) 12px 8px/2px 44px no-repeat,
-        linear-gradient(#000 0 0) 50px 8px/2px 44px no-repeat,
-        linear-gradient(#000 0 0) 14px 52px/36px 2px no-repeat,
-        /* KOŁNIERZ */
-        linear-gradient(#d5d8dc 0 0) 22px 8px/8px 6px no-repeat,
-        linear-gradient(#bdc3c7 0 0) 34px 8px/8px 6px no-repeat,
-        linear-gradient(#000 0 0) 22px 14px/20px 2px no-repeat,
-        /* KORPUS BIAŁY */
-        linear-gradient(#ecf0f1 0 0) 14px 16px/36px 34px no-repeat,
-        /* CIENIOWANIE */
-        linear-gradient(#d5d8dc 0 0) 32px 16px/18px 34px no-repeat,
-        linear-gradient(#bdc3c7 0 0) 41px 16px/9px 34px no-repeat,
-        /* GUZIKI */
-        linear-gradient(#2c3e50 0 0) 30px 22px/4px 4px no-repeat,
-        linear-gradient(#2c3e50 0 0) 30px 32px/4px 4px no-repeat,
-        linear-gradient(#2c3e50 0 0) 30px 42px/4px 4px no-repeat,
-        /* KIESZEŃ */
-        linear-gradient(rgba(0,0,0,0.2) 0 0) 18px 24px/10px 10px no-repeat,
-        linear-gradient(#000 0 0) 18px 24px/10px 2px no-repeat;
-    top: 65vh; 
-    right: 17vw;
-    scale: 0.8;
-    animation-delay: -0.9s;
+/* ANIMACJA 6 KLATEK = PŁYNNIEJ ALE NADAL PIXEL */
+@keyframes machajPixel {
+    0% { transform: rotate(-18deg) translateX(-2px); }
+    16% { transform: rotate(12deg) translateX(3px); }
+    33% { transform: rotate(-10deg) translateX(-2px); }
+    50% { transform: rotate(15deg) translateX(3px); }
+    66% { transform: rotate(-12deg) translateX(-2px); }
+    83% { transform: rotate(8deg) translateX(2px); }
+    100% { transform: rotate(-18deg) translateX(-2px); }
+}
+
+/* MOBILE - JESZCZE MNIEJSZE */
+@media (max-width: 768px) {
+  .pranie { scale: 0.9; }
+  .pranie-1 { top: 28vh; right: 8vw; }
+  .pranie-2 { top: 40vh; right: 10vw; }
+  .pranie-3 { top: 53vh; right: 9vw; }
+  .pranie-4 { top: 66vh; right: 10vw; }
 }
 
 /* MOCNA KLATKOWA ANIMACJA Z CIENIEM */
