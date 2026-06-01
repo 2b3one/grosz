@@ -22,9 +22,29 @@ body {
     z-index: 1;
 }
 
-.capybara-hotspot {
-    background: rgba(255,0,0,0.5); /* czerwone kółko */
-    border: 3px solid yellow;      /* żółta ramka */
+..capybara-hotspot {
+    position: absolute;
+    width: 160px;   /* większy obszar kliknięcia */
+    height: 160px;
+    bottom: 35%;    /* było 42% - schodzimy niżej */
+    left: 28%;      /* było 38% - idziemy w lewo */
+    cursor: pointer;
+    z-index: 6;
+    border-radius: 50%;
+    /* background: rgba(255,0,0,0.5); zostaw na testy, potem zakomentuj */
+}
+.capybara-hotspot:hover {
+    filter: drop-shadow(0 0 15px #00ff88);
+}
+
+/* MOBILE - kapibara jeszcze niżej na telefonie */
+@media (max-width: 600px) {
+    .capybara-hotspot {
+        width: 120px;
+        height: 120px;
+        bottom: 38%;  /* dostrój na swoim telefonie */
+        left: 25%;    
+    }
 }
 
 /* CHMURY */
