@@ -24,17 +24,46 @@ body {
 
 .capybara-hotspot {
     position: absolute;
-    width: 160px;
-    height: 160px;
-    bottom: 20%;    /* Twoja wartość na desktop */
-    left: 30%;      /* Twoja wartość na desktop */
+    /* Używamy vw/vh żeby pozycja była stała względem ekranu */
+    width: 12vw;        /* szerokość = 12% szerokości ekranu */
+    height: 12vw;       /* kwadrat */
+    max-width: 160px;   /* ale max 160px na dużych monitorach */
+    max-height: 160px;
+    min-width: 80px;    /* min 80px na małych telefonach */
+    min-height: 80px;
+    
+    /* POZYCJA PYSKA KAPIBARY - LEWY DOLNY RÓG */
+    left: 22vw;         /* 22% od lewej krawędzi */
+    bottom: 28vh;       /* 28% od dołu ekranu */
+    
     cursor: pointer;
     z-index: 6;
     border-radius: 50%;
-    /* background: rgba(255,0,0,0.5); test */
+    transform: translate(-50%, 50%); /* wycentruj kółko na tym punkcie */
+    /* background: rgba(255,0,0,0.5); odkomentuj do testów */
 }
 .capybara-hotspot:hover {
     filter: drop-shadow(0 0 15px #00ff88);
+}
+
+/* MOBILE - dostrojenie bo menu + inne proporcje */
+@media (max-width: 768px) {
+    .capybara-hotspot {
+        left: 25vw;     /* trochę w prawo na telefonie */
+        bottom: 35vh;   /* wyżej żeby menu nie zasłaniało */
+        width: 18vw;    /* większy palec = większe kółko */
+        height: 18vw;
+    }
+}
+
+/* WĄSKIE TELEFONY */
+@media (max-width: 400px) {
+    .capybara-hotspot {
+        left: 23vw;
+        bottom: 38vh;
+        width: 22vw;
+        height: 22vw;
+    }
 }
 
 /* MOBILE - hotspot wyżej żeby nie wpadł pod menu */
