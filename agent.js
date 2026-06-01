@@ -158,3 +158,22 @@ document.getElementById("btn-start").onclick = () => kapibaraAddMsg("Start - Wkr
 document.getElementById("btn-mapa").onclick = () => kapibaraAddMsg("Mapa - Tylko wtajemniczeni znają wszystkie skróty.", "bot");
 document.getElementById("btn-postacie").onclick = () => kapibaraAddMsg("Postacie - Heniek, LGC, Kapibara. Reszta to tło.", "bot");
 document.getElementById("btn-kontakt").onclick = () => kapibaraAddMsg("Kontakt - LGC nie odbiera nieznanych numerów.", "bot");
+
+/* === LOSOWE PRANIE === */
+const ciuchy = ["👕", "👖", "🧦", "👔", "👗", "🧤", "🥋"];
+function spawnPranie() {
+    if (document.querySelectorAll('.pranie-dynamic').length >= 2) return;
+    
+    const p = document.createElement("div");
+    p.className = "pranie pranie-dynamic";
+    p.innerText = ciuchy[Math.floor(Math.random() * ciuchy.length)];
+    p.style.top = (20 + Math.random() * 30) + "vh";
+    p.style.left = (10 + Math.random() * 80) + "vw";
+    p.style.fontSize = (2 + Math.random() * 1.5) + "vw";
+    p.style.animationDelay = `-${Math.random() * 2}s`;
+    p.style.animationDuration = `${2.5 + Math.random() * 1}s`;
+    
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 15000);
+}
+setInterval(spawnPranie, 8000);

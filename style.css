@@ -86,22 +86,93 @@ body {
     }
 }
 
-/* CHMURY */
+/* CHMURY - POPRAWIONE PŁYNIĘCIE */
 .cloud {
     position: absolute;
-    width: 250px;
-    opacity: 0.6;
-    animation: moveClouds 50s linear infinite;
+    width: 20vw;
+    max-width: 300px;
+    min-width: 150px;
+    opacity: 0.5;
     z-index: 2;
-    filter: brightness(0.8);
+    filter: blur(1px) brightness(0.7);
     pointer-events: none;
+    user-select: none;
 }
-.cloud-1 { top: 8%; animation-delay: 0s; }
-.cloud-2 { top: 15%; width: 350px; animation-duration: 70s; animation-delay: -15s; }
+.cloud-1 {
+    top: 8vh;
+    animation: plynChmura1 80s linear infinite;
+}
+.cloud-2 {
+    top: 15vh;
+    width: 25vw;
+    max-width: 400px;
+    animation: plynChmura2 110s linear infinite;
+    animation-delay: -20s;
+}
 
-@keyframes moveClouds {
-    0% { left: -30%; }
-    100% { left: 110%; }
+@keyframes plynChmura1 {
+    0% { left: -30vw; transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { left: 110vw; transform: translateY(0px); }
+}
+@keyframes plynChmura2 {
+    0% { left: -40vw; transform: translateY(5px); }
+    50% { transform: translateY(-5px); }
+    100% { left: 110vw; transform: translateY(5px); }
+}
+
+/* PRANIE NA BALKONACH - MACHANIE */
+.pranie {
+    position: absolute;
+    font-size: 2.5vw;
+    z-index: 3;
+    pointer-events: none;
+    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.5));
+    animation: machajPranie 3s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+/* Pozycje prania - dostosuj pod swoje bloki na zdjęciu */
+.pranie-1 {
+    top: 25vh;
+    left: 15vw;
+    animation-delay: 0s;
+}
+.pranie-2 {
+    top: 28vh;
+    left: 65vw;
+    animation-delay: -0.5s;
+}
+.pranie-3 {
+    top: 45vh;
+    left: 20vw;
+    animation-delay: -1s;
+    font-size: 1.8vw;
+}
+.pranie-4 {
+    top: 42vh;
+    left: 72vw;
+    animation-delay: -1.5s;
+}
+
+@keyframes machajPranie {
+    0%, 100% { transform: rotate(-5deg) translateX(0px); }
+    25% { transform: rotate(3deg) translateX(2px); }
+    50% { transform: rotate(-3deg) translateX(-1px); }
+    75% { transform: rotate(5deg) translateX(1px); }
+}
+
+/* MOBILE - mniejsze pranie i wolniejsze chmury */
+@media (max-width: 768px) {
+    .pranie { font-size: 5vw; }
+    .cloud-1 { animation-duration: 100s; }
+    .cloud-2 { animation-duration: 130s; }
+    
+    /* Przesuń pranie na mobile */
+    .pranie-1 { top: 30vh; left: 10vw; }
+    .pranie-2 { top: 33vh; left: 70vw; }
+    .pranie-3 { top: 48vh; left: 15vw; }
+    .pranie-4 { top: 45vh; left: 75vw; }
 }
 
 /* KAPIBARA HOTSPOT - FIX NAZWY KLASY */
